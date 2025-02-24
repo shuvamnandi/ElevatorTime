@@ -32,6 +32,12 @@ $v^2 = u^2 + 2as$
 ## 2. Scenario where elevator does not reach the maximum speed as the distance between 2 floors is too short
 - The elevator starts off at the current floor at zero as the initial velocity.
 - It accelerates and covers some distance before it needs to start decelerating again to reach the destination floor at zero as the final velocity.  
-- We can consider the fact that the final velocity it reaches after accelerating is the same velocity at which it will start to decelerate.
-
-- Hence, Total time taken = Time spend while accelerating from 0 to Some Velocity (< Max Velocity) + Time spend while decelerating from the Same Velocity to 0
+- We can consider the fact that the final velocity it reaches after accelerating (lets call it $v$) is the same velocity at which it will start to decelerate.
+- Lets say that rate of acceleration is $a$, and rate of deceleration is $d$. The lift covers distance $s_a$ while accelerating and $s_d$ while decelerating 
+- We can equate $v^2 = 2as_a$ with $v^2 = 2ds_d$ and then find out the correlation between $s_a$ and $s_d$ as $s_d=as_a/d$
+- Therefore, total distance covered by the elevator $s = s_a + s_d$ => $s = s_a + as_a/d$
+- And, velocity is $v = \sqrt{2as_a}$ which is also the same as $v = \sqrt{2ds_d}$ 
+- Since we already know the total distance to be the distance between the 2 floors, we can solve for $s_a$ and find that the distance covered while accelerating, $s_a$ is $s_a = s / ( 1 + a/d)$
+- This is used in ```getDistanceCoveredBasedOnSameVelocityReached``` to derive the distance covered while accelerating
+- Once we find out $s_a$, it is straightforward to find $s_d$, which is $s_d = s - s_a$ 
+- We can thereafter use the same logic as ```getTimeTakenToCoverDistanceBasedOnAcceleration``` to derive the time taken to cover both $s_a$ and $s_d$ respectively

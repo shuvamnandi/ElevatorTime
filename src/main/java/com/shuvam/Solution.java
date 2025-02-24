@@ -8,7 +8,7 @@ public class Solution {
     // Initialise Map with height level (meters) of each floor
     private static final Map<Integer, Double> FLOOR_HEIGHT_MAP = Map.of(0, 0.0, 1, 2.5,
             2, 5.2, 3, 8.7,
-            4, 12.5, 5, 15.7, 6, 18.9);
+            4, 12.5, 5, 15.7, 6, 18.9, 17, 50.0);
 
     public static InputParameters getInputPrams(String[] args) {
         // inputs, destination
@@ -57,7 +57,7 @@ public class Solution {
             // Used mathematical equations to calculate the distance covered while increasing speed when accelerating
             // and slowing down when decelerating
             // See README.md for more details on calculating this formula
-            double distanceCoveredWhileAcceleratingPartly = distance / ( 1 + inputParameters.accelerationRate() / inputParameters.decelerationRate());
+            double distanceCoveredWhileAcceleratingPartly = getDistanceCoveredBasedOnSameVelocityReached(distance, inputParameters.accelerationRate(), inputParameters.decelerationRate());
             double distanceCoveredWhileDeceleratingPartly = distance - distanceCoveredWhileAcceleratingPartly;
             double timeTakenInAccelerationMode = getTimeTakenToCoverDistanceBasedOnAcceleration(distanceCoveredWhileAcceleratingPartly, inputParameters.accelerationRate());
             double timeTakenInDecelerationMode = getTimeTakenToCoverDistanceBasedOnAcceleration(distanceCoveredWhileDeceleratingPartly, inputParameters.decelerationRate());

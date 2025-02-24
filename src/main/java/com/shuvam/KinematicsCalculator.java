@@ -29,4 +29,12 @@ public class KinematicsCalculator {
         */
         return distance / velocity;
     }
+
+    public static double getDistanceCoveredBasedOnSameVelocityReached(double totalDistance, double acceleration, double deceleration) {
+        /* Using the equations v^2 = u^2 + 2*a*s, v^2 = u^2 + 2*d*s and s_total = s_a + s_d (see more in README)
+        Given u (initial velocity) = 0, a (acceleration), d (deceleration), solve for s_a (distance covered
+        during acceleration phase) as below
+        */
+        return totalDistance / ( 1 + acceleration / deceleration);
+    }
 }
