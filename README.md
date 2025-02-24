@@ -7,6 +7,8 @@
 2. The elevator arrives at complete rest when it comes to a stop
 3. Deceleration typically is negative (in contrast to acceleration), but for this problem's solution it's treated similarly as acceleration. It has no impact on calculations since initial velocity is swapped with final velocity in these cases also, so the signs are still correct in calculations.
 4. The wait time for opening/closing of doors is not considered in the travel time it will take a user to reach their destination after they enter the elevator.
+5. The inputs provided are initial floor, target floor, maximum velocity, acceleration and deceleartion of the elevator. 
+6. A default set of heights is initialized as constant values. It can be accordingly overridden based on input parameters.
 
 # Kinematics equations of motion with constant acceleration 
 # 1. Final Velocity (v) = Initial Velocity (u) + Acceleration (a) x Time (t)
