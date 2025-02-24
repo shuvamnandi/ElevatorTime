@@ -2,13 +2,12 @@ package com.shuvam;
 
 public class KinematicsCalculator {
 
-    public static double getDistanceCoveredBasedOnMaxVelocityAndAcceleration(double maxVelocity, double acceleration) {
+    public static double getDistanceBasedOnMaxVelocityAndAcceleration(double maxVelocity, double acceleration) {
         /* Using the equation v^2 = u^2 + 2*a*s
         Given u (initial velocity) = 0, a (acceleration), solve for s (distance) as below
         */
         return Math.abs(Math.pow(maxVelocity, 2) / (2*acceleration));
     }
-
 
     public static double getTimeTakenToCoverDistanceBasedOnAcceleration(double distance, double acceleration) {
         /* Using the equation s = u*t + 1/2 a*t*t
