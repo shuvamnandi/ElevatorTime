@@ -1,4 +1,4 @@
-# calculate-elevator-time
+# Elevator Time
 
 ## Concepts used in Solving this Problem
 
@@ -10,17 +10,17 @@
 
 # Kinematics equations of motion with constant acceleration 
 # 1. Final Velocity (v) = Initial Velocity (u) + Acceleration (a) x Time (t)
-$(v = u + at)$
-- When Initial velocity of object is 0, $(v = at)$
+$v = u + at$
+- When Initial velocity of object is 0, $v = at$
 
 # 2. Distance (s) = Initial Velocity x Time + 0.5 Acceleration x Time x Time
-$(s = ut + 0.5at^2)$
-- When Initial velocity of object is 0, $(s = 0.5at^2)$
+$s = ut + 0.5at^2$
+- When Initial velocity of object is 0, $s = 0.5at^2$
 - This is used in ```getTimeTakenToCoverDistanceBasedOnAcceleration``` to derive the time taken to cover a distance, given the acceleration
 
 # 3. Final Velocity squared (v^2) = Initial Velocity squared (u^2) + 2 x Acceleration (a) x Distance (s)
-$(v^2 = u^2 + 2as)$
-- When Initial velocity of object is 0, $(v^2 = 2as)$
+$v^2 = u^2 + 2as$
+- When Initial velocity of object is 0, $v^2 = 2as$
 - This is used in ```getDistanceBasedOnMaxVelocityAndAcceleration``` to derive the distance the elevator can travel, given the maximum velocity it reaches and the rate of acceleration
 
 # Logic used in ```Solution.class``` to find the time taken by elevator to travel between 2 floors
